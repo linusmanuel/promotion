@@ -3,7 +3,11 @@ import './Card.css'
 
 const PromotionCard = ({ promotion }) => (
   <div className="promotion-card">
-    <img src={promotion.imagemUrl} alt="Card" className="promotion-card__image"/>
+    <img
+      src={promotion.imageUrl}
+      alt={promotion.title}
+      className="promotion-card__image"
+    />
     <div className="promotion-card__info">
       <h1 className="promotion-card__title">{promotion.title}</h1>
       <span className="promotion-card__price">R$ {promotion.price}</span>
@@ -16,7 +20,10 @@ const PromotionCard = ({ promotion }) => (
           {promotion.comments.length}{' '}
           comentário{promotion.comments.length > 1 ? 's' : ''}
         </div>
-        <a href={promotion.url} target="_blank" className="promotion-card__link">
+        <a href={promotion.url}
+          target="_blank"
+          rel="noreferrer"
+          className="promotion-card__link">
           IR PARA O SITE
         </a>
       </footer>
